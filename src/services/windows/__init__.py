@@ -1,0 +1,1 @@
+from .Window import query_view_data, query_totalwin_vegpurchases, query_top5windows, query_top5veg
