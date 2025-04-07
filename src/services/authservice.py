@@ -1,5 +1,4 @@
 from src.models.authmodel import User
-from src import db
 
 def register_user(account, password):
     # 注册用户

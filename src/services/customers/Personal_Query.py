@@ -1,51 +1,21 @@
-from db_config import get_db_connection
+from src.models.customers import Customer
 
 def query_recent_meal(user_id):
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.callproc('QueryRecentMeal', [user_id])
-    results = []
-    for result in cursor.stored_results():
-        results.extend(result.fetchall())
-    cursor.close()
-    conn.close()
-    return results
+    # 查询最近的一餐
+    return Customer.query_recent_meal(user_id)
 
 def query_remaining_money(user_id):
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.callproc('GetRemainingMoney', [user_id])
-    result = []
-    for res in cursor.stored_results():
-        result.extend(res.fetchall())
-    cursor.close()
-    conn.close()
-    return result
+    # 查询剩余金额
+    return Customer.query_remaining_money(user_id)
 
 def query_total_spent(user_id):
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute('SELECT GetTotalSpent(%s) AS total_spent', (user_id,))
-    result = cursor.fetchone()
-    cursor.close()
-    conn.close()
-    return result
+    # 查询总花费
+    return Customer.query_total_spent(user_id)
 
-def process_dine_in(input_Bid, input_Vid, input_Bnum):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.callproc('DineInProcess', [input_Bid, input_Vid, input_Bnum])
-    conn.commit()
-    cursor.close()
-    conn.close()
+def process_dine_in(Bid, Vid, Bnum):
+    # 处理堂食
+    return Customer.process_dine_in(Bid, Vid, Bnum)
 
 def query_top3_spenders():
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.callproc('GetTop3SpendersInLast30Days')
-    results = []
-    for result in cursor.stored_results():
-        results.extend(result.fetchall())
-    cursor.close()
-    conn.close()
-    return results
+    # 查询前三名消费最多的用户
+    return Customer.query_top3_spenders()
