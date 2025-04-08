@@ -1,1 +1,1 @@
-from Windowmodel import Window
+from .Windowmodel import Window

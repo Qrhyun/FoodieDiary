@@ -1,0 +1,28 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=PyCharm
+
+###
+
+
+### POST 请求测试注册接口
+POST http://127.0.0.1:5000/register
+Content-Type: application/json
+
+{
+
+  "account": "testuser2",
+  "password": "1234"
+}
+
+###
+
+### POST 请求测试登录接口
+POST http://127.0.0.1:5000/login
+Content-Type: application/json
+
+{
+  "account": "testuser2",
+  "password": "123"
+}
+###

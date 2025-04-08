@@ -1,1 +1,1 @@
-from Personal_Querymodel import Customer
+from .Personal_Querymodel import Customer

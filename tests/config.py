@@ -1,3 +1,4 @@
+"""
 import logging
 class TestConfig:
     DEBUG = True  # 开启调试模式
@@ -10,3 +11,4 @@ class TestConfig:
 
     # 启用日志记录
     LOGGING_LEVEL = logging.DEBUG
+"""

@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 from src import create_app
 
+
 # 获取项目根目录的绝对路径
 project_root = Path(__file__).resolve().parent.parent
 

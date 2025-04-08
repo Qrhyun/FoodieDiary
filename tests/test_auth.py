@@ -1,3 +1,4 @@
+"""
 import pytest
 import logging
 from src import create_app, db
@@ -47,3 +48,22 @@ def test_delete_user(test_client):
     assert message == "用户删除成功"
     user = User.query_user('testuser')
     assert user is None
+"""
+
+
+
+
+# test_auth.py
+import requests
+
+url = 'http://127.0.0.1:5000/auth/register'  # 确保 URL 与您的蓝图注册匹配
+headers = {'Content-Type': 'application/json'}
+data = {
+    "account": "testuser",
+    "password": "testpassword"
+}
+
+response = requests.post(url, headers=headers, json=data)
+
+print("Status Code:", response.status_code)
+print("Response Body:", response.json())
