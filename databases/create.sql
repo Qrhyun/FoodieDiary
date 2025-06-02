@@ -5,7 +5,7 @@ CREATE TABLE sup (
     phone VARCHAR(20)
                      -- 供应商电话，字符串，可选
 );
-
+-- commit
 CREATE TABLE mat (
     Mid INT AUTO_INCREMENT PRIMARY KEY,  -- 物品ID，自动递增主键
     Mname VARCHAR(100) NOT NULL,         -- 物品名称，字符串，必填

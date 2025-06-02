@@ -10,4 +10,5 @@ class Config:
 
     # 启用日志记录
     LOGGING_LEVEL = logging.DEBUG
+    # fix the bug
 
