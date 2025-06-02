@@ -62,3 +62,33 @@ Content-Type: application/json
     }
   ]
 }
+
+### GET 请求浏览座位信息
+GET http://127.0.0.1:5000/seats
+{
+  "seats": [
+    {
+      "id": "1",
+      "status": "available",
+      "location": "A区，第一排"
+    },
+    {
+      "id": "2",
+      "status": "available",
+      "location": "B区，第二排"
+    },
+    {
+      "id": "3",
+      "status": "booked",
+      "location": "C区，第三排"
+    }
+  ]
+}
+
+### POST 请求预订座位
+POST http://127.0.0.1:5000/book-seat
+Content-Type: application/json
+
+{
+  "seat_id": "1"
+}
