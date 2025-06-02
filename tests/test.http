@@ -26,3 +26,39 @@ Content-Type: application/json
   "password": "123"
 }
 ###
+
+### GET 请求浏览今日菜品信息
+GET http://127.0.0.1:5000/daily-menu
+{
+  "menu": [
+    {
+      "id": "1",
+      "name": "宫保鸡丁",
+      "price": 30,
+      "description": "经典川菜，鸡肉嫩滑，花生香脆"
+    },
+    {
+      "id": "2",
+      "name": "鱼香肉丝",
+      "price": 28,
+      "description": "四川特色菜，酸甜适中，肉丝嫩滑"
+    }
+  ]
+}
+
+### POST 请求在线订餐
+POST http://127.0.0.1:5000/order
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "id": "1",
+      "quantity": 2
+    },
+    {
+      "id": "2",
+      "quantity": 1
+    }
+  ]
+}
